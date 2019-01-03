@@ -133,17 +133,17 @@ namespace IdleMaster
             {
                 if(!Settings.Default.fastMode)
                 {
-                    // JN: Original idle mode
+                    // JN: Original idle mode //SPMJNK: bump cap from 30 to 99999
                     if (badge.HoursPlayed >= 2 && badge.InIdle)
                         badge.StopIdle();
 
-                    if (badge.HoursPlayed < 2 && CanIdleBadges.Count(b => b.InIdle) < 30)
+                    if (badge.HoursPlayed < 2 && CanIdleBadges.Count(b => b.InIdle) < 99999)
                         badge.Idle();
                 }
                 else
                 {
-                    // JN: Fast mode (still limit to 30 (?))
-                    if (CanIdleBadges.Count(b => b.InIdle) < 30)
+                    // JN: Fast mode (still limit to 30 (?)) //SPMJNK: bump cap from 30 to 99999
+                    if (CanIdleBadges.Count(b => b.InIdle) < 99999)
                         badge.Idle();
                 }
                 
